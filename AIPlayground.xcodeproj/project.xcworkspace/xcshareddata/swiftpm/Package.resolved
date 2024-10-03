@@ -1,0 +1,51 @@
+{
+  "originHash" : "deb6108efa2461ccebdbe3847b1dcdfdd132c285d3043cade061ebc7e1fb868a",
+  "pins" : [
+    {
+      "identity" : "networkimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gonzalezreal/NetworkImage",
+      "state" : {
+        "revision" : "7aff8d1b31148d32c5933d75557d42f6323ee3d1",
+        "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "splash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/Splash.git",
+      "state" : {
+        "revision" : "7f4df436eb78fe64fe2c32c58006e9949fa28ad8",
+        "version" : "0.16.0"
+      }
+    },
+    {
+      "identity" : "stream-chat-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GetStream/stream-chat-swift.git",
+      "state" : {
+        "revision" : "f9c63f40dc5ca9b3c7df44ffec151f0f9bdbd364",
+        "version" : "4.64.0"
+      }
+    },
+    {
+      "identity" : "stream-chat-swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GetStream/stream-chat-swiftui",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "d7bdf433cf1ea03aa179e49529c8b8dea3dc53a6"
+      }
+    },
+    {
+      "identity" : "swift-markdown-ui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gonzalezreal/swift-markdown-ui.git",
+      "state" : {
+        "revision" : "55441810c0f678c78ed7e2ebd46dde89228e02fc",
+        "version" : "2.4.0"
+      }
+    }
+  ],
+  "version" : 3
+}

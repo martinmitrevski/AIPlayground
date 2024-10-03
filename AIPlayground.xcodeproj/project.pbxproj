@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84F07BB62CAC339A00422E58 /* SampleIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F07BB52CAC339A00422E58 /* SampleIntegration.swift */; };
+		84F07BBC2CAD3B2600422E58 /* StreamChatSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 84F07BBB2CAD3B2600422E58 /* StreamChatSwiftUI */; };
+		84F07BBF2CAD3DD500422E58 /* CustomCommandsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F07BBE2CAD3DD500422E58 /* CustomCommandsConfig.swift */; };
+		84F07BC12CAD62BC00422E58 /* AICommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F07BC02CAD62BC00422E58 /* AICommandHandler.swift */; };
+		84F07BCB2CADE7CD00422E58 /* CustomMessageResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F07BCA2CADE7CD00422E58 /* CustomMessageResolver.swift */; };
+		84F113B82CABE6AE00886CBD /* AIPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113B72CABE6AE00886CBD /* AIPlaygroundApp.swift */; };
+		84F113BC2CABE6B000886CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F113BB2CABE6B000886CBD /* Assets.xcassets */; };
+		84F113BF2CABE6B000886CBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F113BE2CABE6B000886CBD /* Preview Assets.xcassets */; };
+		84F113C62CABEC8C00886CBD /* StreamChatAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113C52CABEC8C00886CBD /* StreamChatAI.swift */; };
+		84F113C92CABF04400886CBD /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113C82CABF04400886CBD /* OpenAIService.swift */; };
+		84F113CE2CAC02A600886CBD /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113CD2CAC02A600886CBD /* CodeView.swift */; };
+		84F113D12CAC09F200886CBD /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 84F113D02CAC09F200886CBD /* Splash */; };
+		84F113D32CAC09F200886CBD /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 84F113D22CAC09F200886CBD /* SplashMarkdown */; };
+		84F113D62CAC22D400886CBD /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 84F113D52CAC22D400886CBD /* MarkdownUI */; };
+		84F113D82CAC23A600886CBD /* TextOutputFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113D72CAC23A600886CBD /* TextOutputFormat.swift */; };
+		84F113DA2CAC23D100886CBD /* SplashCodeSyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F113D92CAC23D100886CBD /* SplashCodeSyntaxHighlighter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84F07BB52CAC339A00422E58 /* SampleIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleIntegration.swift; sourceTree = "<group>"; };
+		84F07BBE2CAD3DD500422E58 /* CustomCommandsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCommandsConfig.swift; sourceTree = "<group>"; };
+		84F07BC02CAD62BC00422E58 /* AICommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICommandHandler.swift; sourceTree = "<group>"; };
+		84F07BCA2CADE7CD00422E58 /* CustomMessageResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageResolver.swift; sourceTree = "<group>"; };
+		84F113B42CABE6AE00886CBD /* AIPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F113B72CABE6AE00886CBD /* AIPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPlaygroundApp.swift; sourceTree = "<group>"; };
+		84F113BB2CABE6B000886CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84F113BE2CABE6B000886CBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84F113C52CABEC8C00886CBD /* StreamChatAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamChatAI.swift; sourceTree = "<group>"; };
+		84F113C82CABF04400886CBD /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		84F113CD2CAC02A600886CBD /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		84F113D72CAC23A600886CBD /* TextOutputFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOutputFormat.swift; sourceTree = "<group>"; };
+		84F113D92CAC23D100886CBD /* SplashCodeSyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCodeSyntaxHighlighter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F113B12CABE6AE00886CBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F07BBC2CAD3B2600422E58 /* StreamChatSwiftUI in Frameworks */,
+				84F113D32CAC09F200886CBD /* SplashMarkdown in Frameworks */,
+				84F113D12CAC09F200886CBD /* Splash in Frameworks */,
+				84F113D62CAC22D400886CBD /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84F07BBD2CAD3B6C00422E58 /* StreamChat */ = {
+			isa = PBXGroup;
+			children = (
+				84F07BBE2CAD3DD500422E58 /* CustomCommandsConfig.swift */,
+				84F07BC02CAD62BC00422E58 /* AICommandHandler.swift */,
+				84F07BCA2CADE7CD00422E58 /* CustomMessageResolver.swift */,
+			);
+			path = StreamChat;
+			sourceTree = "<group>";
+		};
+		84F113AB2CABE6AE00886CBD = {
+			isa = PBXGroup;
+			children = (
+				84F113B62CABE6AE00886CBD /* AIPlayground */,
+				84F113B52CABE6AE00886CBD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84F113B52CABE6AE00886CBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F113B42CABE6AE00886CBD /* AIPlayground.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F113B62CABE6AE00886CBD /* AIPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				84F07BBD2CAD3B6C00422E58 /* StreamChat */,
+				84F113C72CABF03200886CBD /* OpenAI */,
+				84F113B72CABE6AE00886CBD /* AIPlaygroundApp.swift */,
+				84F113BB2CABE6B000886CBD /* Assets.xcassets */,
+				84F113BD2CABE6B000886CBD /* Preview Content */,
+				84F113C52CABEC8C00886CBD /* StreamChatAI.swift */,
+				84F113CD2CAC02A600886CBD /* CodeView.swift */,
+				84F113D72CAC23A600886CBD /* TextOutputFormat.swift */,
+				84F113D92CAC23D100886CBD /* SplashCodeSyntaxHighlighter.swift */,
+				84F07BB52CAC339A00422E58 /* SampleIntegration.swift */,
+			);
+			path = AIPlayground;
+			sourceTree = "<group>";
+		};
+		84F113BD2CABE6B000886CBD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84F113BE2CABE6B000886CBD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84F113C72CABF03200886CBD /* OpenAI */ = {
+			isa = PBXGroup;
+			children = (
+				84F113C82CABF04400886CBD /* OpenAIService.swift */,
+			);
+			path = OpenAI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F113B32CABE6AE00886CBD /* AIPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F113C22CABE6B000886CBD /* Build configuration list for PBXNativeTarget "AIPlayground" */;
+			buildPhases = (
+				84F113B02CABE6AE00886CBD /* Sources */,
+				84F113B12CABE6AE00886CBD /* Frameworks */,
+				84F113B22CABE6AE00886CBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIPlayground;
+			packageProductDependencies = (
+				84F113D02CAC09F200886CBD /* Splash */,
+				84F113D22CAC09F200886CBD /* SplashMarkdown */,
+				84F113D52CAC22D400886CBD /* MarkdownUI */,
+				84F07BBB2CAD3B2600422E58 /* StreamChatSwiftUI */,
+			);
+			productName = AIPlayground;
+			productReference = 84F113B42CABE6AE00886CBD /* AIPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F113AC2CABE6AE00886CBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					84F113B32CABE6AE00886CBD = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 84F113AF2CABE6AE00886CBD /* Build configuration list for PBXProject "AIPlayground" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F113AB2CABE6AE00886CBD;
+			packageReferences = (
+				84F113CF2CAC09F200886CBD /* XCRemoteSwiftPackageReference "Splash" */,
+				84F113D42CAC22D400886CBD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				84F07BBA2CAD3B2600422E58 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
+			);
+			productRefGroup = 84F113B52CABE6AE00886CBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84F113B32CABE6AE00886CBD /* AIPlayground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84F113B22CABE6AE00886CBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F113BF2CABE6B000886CBD /* Preview Assets.xcassets in Resources */,
+				84F113BC2CABE6B000886CBD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F113B02CABE6AE00886CBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F07BCB2CADE7CD00422E58 /* CustomMessageResolver.swift in Sources */,
+				84F07BBF2CAD3DD500422E58 /* CustomCommandsConfig.swift in Sources */,
+				84F113C62CABEC8C00886CBD /* StreamChatAI.swift in Sources */,
+				84F113D82CAC23A600886CBD /* TextOutputFormat.swift in Sources */,
+				84F07BB62CAC339A00422E58 /* SampleIntegration.swift in Sources */,
+				84F113B82CABE6AE00886CBD /* AIPlaygroundApp.swift in Sources */,
+				84F07BC12CAD62BC00422E58 /* AICommandHandler.swift in Sources */,
+				84F113C92CABF04400886CBD /* OpenAIService.swift in Sources */,
+				84F113DA2CAC23D100886CBD /* SplashCodeSyntaxHighlighter.swift in Sources */,
+				84F113CE2CAC02A600886CBD /* CodeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84F113C02CABE6B000886CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84F113C12CABE6B000886CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F113C32CABE6B000886CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = EHV7XZLAHA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.getstream.AIPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84F113C42CABE6B000886CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = EHV7XZLAHA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.getstream.AIPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F113AF2CABE6AE00886CBD /* Build configuration list for PBXProject "AIPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F113C02CABE6B000886CBD /* Debug */,
+				84F113C12CABE6B000886CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F113C22CABE6B000886CBD /* Build configuration list for PBXNativeTarget "AIPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F113C32CABE6B000886CBD /* Debug */,
+				84F113C42CABE6B000886CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84F07BBA2CAD3B2600422E58 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/stream-chat-swiftui";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		84F113CF2CAC09F200886CBD /* XCRemoteSwiftPackageReference "Splash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Splash.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.0;
+			};
+		};
+		84F113D42CAC22D400886CBD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84F07BBB2CAD3B2600422E58 /* StreamChatSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F07BBA2CAD3B2600422E58 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */;
+			productName = StreamChatSwiftUI;
+		};
+		84F113D02CAC09F200886CBD /* Splash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F113CF2CAC09F200886CBD /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = Splash;
+		};
+		84F113D22CAC09F200886CBD /* SplashMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F113CF2CAC09F200886CBD /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = SplashMarkdown;
+		};
+		84F113D52CAC22D400886CBD /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F113D42CAC22D400886CBD /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 84F113AC2CABE6AE00886CBD /* Project object */;
+}
