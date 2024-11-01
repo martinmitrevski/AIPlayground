@@ -12,19 +12,32 @@ import StreamChatSwiftUI
 class AICommandHandler: TwoStepMentionCommand {
     
     @Injected(\.chatClient) var chatClient
-    
-    let streamChatAI = StreamChatAI(
-        apiKey: "YOUR_API_KEY"
-    )
-    
+        
     private var text: String = ""
     
     private let channelController: ChatChannelController
     private var messageId: MessageId?
     private var messageController: ChatMessageController?
+        
+    var stream: AsyncStream<StreamingChunk>?
     
-    override init(channelController: ChatChannelController, commandSymbol: String, id: String, displayInfo: CommandDisplayInfo? = nil, mentionSymbol: String = "@") {
+    var textToSend = ""
+    var chunkCounter = 0
+    
+    private let chunkLimit = 15
+    
+    private let aiStreamingHelper: AIStreamingHelper
+        
+    init(
+        channelController: ChatChannelController,
+        aiStreamingHelper: AIStreamingHelper,
+        commandSymbol: String,
+        id: String,
+        displayInfo: CommandDisplayInfo? = nil,
+        mentionSymbol: String = "@"
+    ) {
         self.channelController = channelController
+        self.aiStreamingHelper = aiStreamingHelper
         super.init(
             channelController: channelController,
             commandSymbol: commandSymbol,
@@ -32,6 +45,12 @@ class AICommandHandler: TwoStepMentionCommand {
             displayInfo: displayInfo,
             mentionSymbol: mentionSymbol
         )
+        
+        Task {
+            if let cider = channelController.cid {
+                try await aiStreamingHelper.createThread(for: cider)
+            }
+        }
     }
     
     override func canBeExecuted(composerCommand: ComposerCommand) -> Bool {
@@ -47,33 +66,16 @@ class AICommandHandler: TwoStepMentionCommand {
         completion: @escaping ((any Error)?) -> Void
     ) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: { [weak self] in
-            self?.sendMessage(composerCommand: composerCommand)
+            self?.sendMessageEphemeral(composerCommand: composerCommand)
         })
-    }
+    }    
     
-    private func sendMessage(composerCommand: ComposerCommand) {
+    private func sendMessageEphemeral(composerCommand: ComposerCommand) {
         let content = composerCommand.typingSuggestion.text
-        let messages: [[String: String]] = [
-            ["role": "system", "content": "You are a helpful assistant."],
-            ["role": "user", "content": content]
-        ]
-        
-        text = ""
-        channelController.createNewMessage(text: "", extraData: ["streaming": true]) { [weak self] result in
-            guard let self, let cid = channelController.cid, let messageId = try? result.get() else { return }
-            self.messageId = messageId
-            self.messageController = chatClient.messageController(
-                cid: cid,
-                messageId: messageId
-            )
-            streamChatAI.sendMessageStreaming(
-                messages: messages
-            ) { [weak self] chunk in
-                guard let self else { return }
-                self.text += chunk
-                self.messageController?.editMessage(text: self.text, extraData: ["streaming": true])
-            } onFinish: {
-                print("==== finished")
+                
+        Task {
+            if let channelId = channelController.cid {
+                try await aiStreamingHelper.startStreaming(message: content, channelId: channelId)
             }
         }
     }

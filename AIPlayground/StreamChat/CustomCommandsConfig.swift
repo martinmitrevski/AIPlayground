@@ -11,7 +11,11 @@ import StreamChatSwiftUI
 
 class CustomCommandsConfig: CommandsConfig {
     
-    public init() {}
+    public init(aiStreamingHelper: AIStreamingHelper) {
+        self.aiStreamingHelper = aiStreamingHelper
+    }
+    
+    private let aiStreamingHelper: AIStreamingHelper
         
     public let mentionsSymbol: String = "@"
     public let instantCommandsSymbol: String = "/"
@@ -34,6 +38,7 @@ class CustomCommandsConfig: CommandsConfig {
         
         let aiCommand = AICommandHandler(
             channelController: channelController,
+            aiStreamingHelper: aiStreamingHelper,
             commandSymbol: "/ai",
             id: "ai",
             displayInfo: .init(
