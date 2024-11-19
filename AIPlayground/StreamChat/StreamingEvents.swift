@@ -32,7 +32,11 @@ struct StreamingEndedEvent: CustomEventPayload {
 }
 
 struct StreamingCancelledEvent: CustomEventPayload {
-    static var eventType: EventType = "streaming_cancelled"
-    
-    let runId: String
+    static var eventType: EventType = "stop_generating"
 }
+
+struct AIIndicatorEvent: CustomEventPayload {
+    static var eventType: EventType = "ai_indicator_changed"
+    let state: String
+}
+

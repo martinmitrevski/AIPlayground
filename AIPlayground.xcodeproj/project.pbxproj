@@ -11,6 +11,7 @@
 		8404D0082CD4E3110028A3FE /* StreamingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404D0072CD4E3110028A3FE /* StreamingEvents.swift */; };
 		8404D00B2CD51CE50028A3FE /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = 8404D00A2CD51CE50028A3FE /* StreamChat */; };
 		842A1C472CC8E810001D93F3 /* StreamChatAI in Frameworks */ = {isa = PBXBuildFile; productRef = 842A1C462CC8E810001D93F3 /* StreamChatAI */; };
+		842B5BF42CDB61F800406DB9 /* StreamAIChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B5BF32CDB61F700406DB9 /* StreamAIChatService.swift */; };
 		842B8FD92CBD39260075AD94 /* FilesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8FD82CBD39260075AD94 /* FilesAPI.swift */; };
 		845B2D0D2CB6939D008106EF /* RunStepStreamEventOneOf5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B2CC82CB6939C008106EF /* RunStepStreamEventOneOf5.swift */; };
 		845B2D0E2CB6939D008106EF /* AssistantObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B2CC92CB6939C008106EF /* AssistantObject.swift */; };
@@ -433,6 +434,7 @@
 		8404D0052CD3E29D0028A3FE /* AIStreamingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStreamingHelper.swift; sourceTree = "<group>"; };
 		8404D0072CD4E3110028A3FE /* StreamingEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingEvents.swift; sourceTree = "<group>"; };
 		842A1C442CC8E768001D93F3 /* StreamChatAI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StreamChatAI; path = ../StreamChatAI; sourceTree = SOURCE_ROOT; };
+		842B5BF32CDB61F700406DB9 /* StreamAIChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamAIChatService.swift; sourceTree = "<group>"; };
 		842B8FD82CBD39260075AD94 /* FilesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesAPI.swift; sourceTree = "<group>"; };
 		845B2CC82CB6939C008106EF /* RunStepStreamEventOneOf5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunStepStreamEventOneOf5.swift; sourceTree = "<group>"; };
 		845B2CC92CB6939C008106EF /* AssistantObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantObject.swift; sourceTree = "<group>"; };
@@ -1303,6 +1305,7 @@
 				84F07BCA2CADE7CD00422E58 /* CustomMessageResolver.swift */,
 				8404D0052CD3E29D0028A3FE /* AIStreamingHelper.swift */,
 				8404D0072CD4E3110028A3FE /* StreamingEvents.swift */,
+				842B5BF32CDB61F700406DB9 /* StreamAIChatService.swift */,
 			);
 			path = StreamChat;
 			sourceTree = "<group>";
@@ -1718,6 +1721,7 @@
 				845B2FCE2CB6957B008106EF /* AssistantToolsFunction.swift in Sources */,
 				845B2D4F2CB6939D008106EF /* VectorStoreObjectFileCounts.swift in Sources */,
 				845B2F202CB693E5008106EF /* FinetuneChatRequestInputMessagesInner.swift in Sources */,
+				842B5BF42CDB61F800406DB9 /* StreamAIChatService.swift in Sources */,
 				845B2ECC2CB693E5008106EF /* MessageDeltaContentTextAnnotationsFileCitationObject.swift in Sources */,
 				845B2F6E2CB693E5008106EF /* CreateEmbeddingRequestModel.swift in Sources */,
 				845B2EE42CB693E5008106EF /* CreateChatCompletionResponseChoicesInner.swift in Sources */,

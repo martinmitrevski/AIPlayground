@@ -91,7 +91,12 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
             isGenerating = true
             channelController.ephemeralMessageEditor.updateMessage(
                 text: "",
-                extraData: ["streaming": true, "state": "Analyzing"]
+                extraData: [
+                    StreamChatAIConstants.aiGenerated: true, 
+                    StreamChatAIConstants.isStreaming: true,
+                    StreamChatAIConstants.currentUserGenerating: true,
+                    StreamChatAIConstants.streamingState: "Analyzing"
+                ]
             )
             self.stream = try await self.streamChatAI.createRun(
                 content: message,
@@ -107,7 +112,11 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
                     self.text += chunk.text ?? ""
                     channelController.ephemeralMessageEditor.updateMessage(
                         text: self.text,
-                        extraData: ["streaming": true, "current": true]
+                        extraData: [
+                            StreamChatAIConstants.aiGenerated: true,
+                            StreamChatAIConstants.isStreaming: true,
+                            StreamChatAIConstants.currentUserGenerating: true
+                        ]
                     )
                     if channelController.channel?.watcherCount ?? 0 > 1 {
                         self.chunkCounter += 1
@@ -128,7 +137,12 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
                 } else if chunk.event == "thread.run.step.created" {
                     channelController.ephemeralMessageEditor.updateMessage(
                         text: "",
-                        extraData: ["streaming": true, "state": "Thinking"]
+                        extraData: [
+                            StreamChatAIConstants.aiGenerated: true,
+                            StreamChatAIConstants.isStreaming: true,
+                            StreamChatAIConstants.currentUserGenerating: true,
+                            StreamChatAIConstants.streamingState: "Thinking"
+                        ]
                     )
                 } else if chunk.event == "thread.run.created" {
                     let runId = chunk.runId
@@ -138,7 +152,11 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
                         .sendEvent(StreamingStartedEvent(messageId: "messageId", runId: runId, threadId: chunk.threadId))
                     channelController.ephemeralMessageEditor.updateMessage(
                         text: "",
-                        extraData: ["streaming": true]
+                        extraData: [
+                            StreamChatAIConstants.aiGenerated: true,
+                            StreamChatAIConstants.isStreaming: true,
+                            StreamChatAIConstants.currentUserGenerating: true
+                        ]
                     )
                 } else if chunk.event == "thread.run.completed" {
                     channelController
@@ -146,6 +164,14 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
                         .sendEvent(
                             StreamingEndedEvent(runId: chunk.runId, threadId: chunk.threadId)
                         )
+                    channelController.ephemeralMessageEditor.updateMessage(
+                        text: text,
+                        extraData: [
+                            StreamChatAIConstants.aiGenerated: true,
+                            StreamChatAIConstants.isStreaming: false,
+                            StreamChatAIConstants.currentUserGenerating: true
+                        ]
+                    )
                     channelController.ephemeralMessageEditor.publish()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.isGenerating = false
@@ -160,18 +186,11 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
     }
     
     func cancelStreaming() async throws {
-        if let runId = self.runId {
-            channelController?
-                .eventsController()
-                .sendEvent(
-                    StreamingCancelledEvent(runId: runId)
-                )
-            try await self.streamChatAI.cancelRun(runId: runId)
-        }
-        channelController?.ephemeralMessageEditor.delete()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            self.isGenerating = false
-        })
+        channelController?
+            .eventsController()
+            .sendEvent(
+                StreamingCancelledEvent()
+            )
     }
     
     public func eventsController(_ eventsController: EventsController, didReceiveEvent event: Event) {
@@ -179,17 +198,31 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
             return
         }
         
+        print("====== \(channelEvent)")
+        
         if self.isGenerating { return }
         
         if channelEvent.payload(ofType: StreamingStartedEvent.self) != nil {
             text = ""
-            channelController.ephemeralMessageEditor.updateMessage(text: "", extraData: ["streaming": true])
+            channelController.ephemeralMessageEditor.updateMessage(
+                text: "",
+                extraData: [
+                    StreamChatAIConstants.aiGenerated: true,
+                    StreamChatAIConstants.isStreaming: true
+                ]
+            )
             return
         }
 
         if let streamingChunkEvent = channelEvent.payload(ofType: StreamingChunkEvent.self) {
             text += streamingChunkEvent.text
-            channelController.ephemeralMessageEditor.updateMessage(text: text, extraData: ["streaming": true])
+            channelController.ephemeralMessageEditor.updateMessage(
+                text: text,
+                extraData: [
+                    StreamChatAIConstants.aiGenerated: true,
+                    StreamChatAIConstants.isStreaming: true
+                ]
+            )
         }
         
         if channelEvent.payload(ofType: StreamingEndedEvent.self) != nil ||
@@ -212,6 +245,7 @@ public class AIStreamingHelper: ObservableObject, EventsControllerDelegate {
     private func createChannelControllerIfNeeded(for channelId: ChannelId) {
         if channelController == nil || channelController?.cid != channelId {
             channelController = chatClient.channelController(for: channelId)
+            channelController?.ephemeralMessageEditor.delete()
         }
     }
 }

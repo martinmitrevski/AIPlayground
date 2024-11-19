@@ -19,7 +19,7 @@ struct AIPlaygroundApp: App {
     var streamChatAI: StreamChatAI = {
         StreamChatAI(apiKey: "your_api_key")
     }()
-    
+        
     let aiStreamingHelper: AIStreamingHelper
     
     var chatClient: ChatClient = {
@@ -40,7 +40,7 @@ struct AIPlaygroundApp: App {
             messageListConfig: .init(messageDisplayOptions: .init(spacerWidth: { _ in return 60 }))
         )
         _streamChat = State(initialValue: StreamChat(chatClient: chatClient, utils: utils))
-        let credentials = UserCredentials.r2d2
+        let credentials = UserCredentials.anakin
         chatClient.connectUser(
             userInfo: credentials.user,
             token: try! Token(rawValue: credentials.token)
@@ -63,12 +63,21 @@ struct AIPlaygroundApp: App {
                 }
                 .onChange(of: channelListViewModel.selectedChannel) { oldValue, newValue in
                     if let newValue {
-                        aiStreamingHelper.setChannelControllerIfNeeded(
-                            chatClient.channelController(for: newValue.channel.cid)
-                        )
+//                        aiStreamingHelper.setChannelControllerIfNeeded(
+//                            chatClient.channelController(for: newValue.channel.cid)
+//                        )
+//                        Task {
+//                            try await StreamAIChatService.shared.setupAgent(channelId: newValue.channel.cid.id)
+//                        }
                     } else {
                         aiStreamingHelper.clearChannelController()
+//                        Task {
+//                            if let oldValue = oldValue {
+//                                try await StreamAIChatService.shared.stopAgent(channelId: oldValue.channel.cid.id)
+//                            }
+//                        }
                     }
+                    TypingIndicatorHandler.shared.channelId = newValue?.channel.cid
                 }
         }
     }

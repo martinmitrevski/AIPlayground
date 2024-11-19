@@ -58,7 +58,7 @@ class AICommandHandler: TwoStepMentionCommand {
     }
     
     override var replacesMessageSent: Bool {
-        false
+        true
     }
     
     override func executeOnMessageSent(
@@ -73,10 +73,10 @@ class AICommandHandler: TwoStepMentionCommand {
     private func sendMessageEphemeral(composerCommand: ComposerCommand) {
         let content = composerCommand.typingSuggestion.text
                 
-        Task {
-            if let channelId = channelController.cid {
-                try await aiStreamingHelper.startStreaming(message: content, channelId: channelId)
-            }
-        }
+//        Task {
+//            if let channelId = channelController.cid {
+//                try await aiStreamingHelper.startStreaming(message: content, channelId: channelId)
+//            }
+//        }
     }
 }
